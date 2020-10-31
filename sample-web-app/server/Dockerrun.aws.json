@@ -1,0 +1,12 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "%ECR_API_REPO_URL%:latest",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "80"
+    }
+  ]
+}
