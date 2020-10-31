@@ -7,11 +7,11 @@ variable "region" {
 }
 
 variable "access_key" {
-  default = "AKIA5ARWREAKV7DVIB63"
+  default = "A"
 }
 
 variable "secret_key" {
-  default = "s3IxeKOUstpL2HkukUD+Z6O7c9bYncW5tGUY5Gw4"
+  default = "s"
 }
 
 variable "public_key" {
