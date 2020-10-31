@@ -1,0 +1,20 @@
+region = "us-east-2"
+access_key = "AKIA5ARWREAKV7DVIB63"
+secret_key = "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"
+public_key = "/home/vamshi/.ssh/id_rsa.pub"
+name = "terraform-aws-three-tire"
+
+# VPC Variables
+app_elb_health_check_interval = "20"
+app_elb_healthy_threshold = "2"
+app_elb_unhealthy_threshold = "2"
+app_elb_health_check_timeout = "5"
+app_key_pair_name = "terraform"
+
+#Web
+web_port = "80"
+web_elb_health_check_interval = "20"
+web_elb_healthy_threshold = "2"
+web_elb_unhealthy_threshold = "2"
+web_elb_health_check_timeout = "5"
+web_key_pair_name = "terraform"
