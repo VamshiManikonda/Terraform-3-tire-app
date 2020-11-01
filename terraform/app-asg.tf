@@ -47,14 +47,14 @@ resource "aws_launch_configuration" "app" {
 
   user_data = <<-EOF
               #!/bin/bash
-              yum install -y java-1.8.0-openjdk-devel wget git
-              export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0
-              wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-              sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
-              yum install -y apache-maven
-              git clone https://github.com/tellisnz/terraform-aws.git
-              cd terraform-aws/sample-web-app/server
-              nohup mvn spring-boot:run -Dspring.datasource.url=jdbc:postgresql://"${module.rds.this_db_instance_address}:${var.db_port}/${var.db_name}" -Dspring.datasource.username="${var.db_username}" -Dspring.datasource.password="${var.db_password}" -Dserver.port="${var.app_port}" &> mvn.out &
+              wget git
+              curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+              sudo yum install nodejs
+              cd ~
+              git clone https://github.com/VamshiManikonda/Terraform-3-tire-app.git
+              cd Terraform-3-tire-app/sample-web-app/server
+              npm install
+              npm start 2>&1| tee npm-output.txt
               EOF
 
   lifecycle {
