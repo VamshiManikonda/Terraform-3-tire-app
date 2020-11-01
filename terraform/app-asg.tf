@@ -47,15 +47,15 @@ resource "aws_launch_configuration" "app" {
 
   user_data = <<-EOF
               #!/bin/bash
-              wget git
+              sudo yum install -y git
               curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
-              sudo yum install nodejs
+              sudo yum install -y nodejs
               cd ~
               git clone https://github.com/VamshiManikonda/Terraform-3-tire-app.git
               cd Terraform-3-tire-app/sample-web-app/server
               npm install
               npm start 2>&1| tee npm-output.txt
-              EOF
+	      EOF
 
   lifecycle {
     create_before_destroy = true

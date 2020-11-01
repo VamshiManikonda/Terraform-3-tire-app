@@ -6,13 +6,7 @@ variable "region" {
   default = "us-east-2"
 }
 
-variable "access_key" {
-  default = "A"
-}
 
-variable "secret_key" {
-  default = "s"
-}
 
 variable "public_key" {
   default = "/home/vamshi/.ssh/id_rsa.pub"
