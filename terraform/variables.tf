@@ -137,7 +137,7 @@ variable "db_instance_class" {
 # App
 variable "app_port" {
   description = "The port on which the application listens for connections"
-  default = 8080
+  default = 3000
 }
 
 variable "app_instance_type" {
@@ -192,7 +192,7 @@ variable "app_key_pair_name" {
 
 variable "web_port" {
   description = "The port on which the web servers listen for connections"
-  default = 80
+  default = 3000
 }
 
 variable "web_instance_type" {
