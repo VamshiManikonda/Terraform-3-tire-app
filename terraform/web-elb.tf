@@ -37,14 +37,14 @@ module "elb_web" {
   listener = [
     {
       instance_port     = var.web_port
-      instance_protocol = "HTTP"
-      lb_port           = var.web_port
+      instance_protocol = "TCP"
+      lb_port           = "80"
       lb_protocol       = "HTTP"
     },
   ]
 
   health_check = {
-      target              = "HTTP:${var.web_port}/"
+      target              = "HTTP:80/"
       interval            = var.web_elb_health_check_interval
       healthy_threshold   = var.web_elb_healthy_threshold
       unhealthy_threshold = var.web_elb_unhealthy_threshold
