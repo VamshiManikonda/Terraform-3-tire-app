@@ -53,5 +53,5 @@ module "rds" {
 }
 
 output "rds_endpoint" {
-  value = "${module.rds.rds_endpoint}"
+  value = "${module.rds.this_db_instance_endpoint}"
 }
