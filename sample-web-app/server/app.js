@@ -3,7 +3,7 @@ var app = express();
 var uuid = require('node-uuid');
 
 var pg = require('pg');
-var conString = process.env.DB; // "postgres://username:password@localhost/database";
+var conString = "postgres://tawsdbuser:tawsdbpassword@terraformaws.cx0jc2k5ufmb.us-east-2.rds.amazonaws.com:5432/taws"; // "postgres://username:password@localhost/database";
 
 // Routes
 app.get('/api/status', function(req, res) {
