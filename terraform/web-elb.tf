@@ -1,6 +1,8 @@
 resource "aws_security_group" "elb_web" {
 
   name = format("%s-elb-web-sg", var.name)
+  load_balancer_type = "network"
+
   vpc_id = module.vpc.vpc_id
 
   ingress {
