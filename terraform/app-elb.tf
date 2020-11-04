@@ -1,6 +1,7 @@
 resource "aws_security_group" "elb_app" {
 
   name = format("%s-elb-app-sg", var.name)
+  load_balancer_type = "network"
 
   vpc_id = module.vpc.vpc_id
 
